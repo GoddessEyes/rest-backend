@@ -2,7 +2,9 @@
 from pydantic import Field
 from src.settings.base import BaseSettings
 
-DB_MODELS = ['src.models.user', ]
+DB_MODELS = [
+    'models.user',
+]
 POSTGRES_DB_URL = (
     "postgres://{postgres_user}:{postgres_password}@{postgres_host}:{postgres_port}/{postgres_db}"
 )

@@ -5,6 +5,7 @@ from tortoise.contrib.fastapi import register_tortoise
 from src.settings import tortoise_config
 from fastapi_admin.factory import app as admin_app
 from starlette.middleware.cors import CORSMiddleware
+from src.endpoints.users.routes import router
 
 
 def init_admin(app: FastAPI):
@@ -44,6 +45,7 @@ def __init_app__():
     init_db(app)
     init_admin(app=app)
     app.mount('/admin', admin_app)
+    app.include_router(router)
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
