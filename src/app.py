@@ -8,7 +8,7 @@ from tortoise.contrib.fastapi import register_tortoise
 
 
 def init_admin(app: FastAPI):
-    @app.on_event('startup')
+    @app.on_event("startup")
     async def startup():
         admin_app.init(
             admin_secret="Shelter",
@@ -43,7 +43,7 @@ def __init_app__():
     app = FastAPI()
     init_db(app)
     init_admin(app=app)
-    app.mount('/admin', admin_app)
+    app.mount("/admin", admin_app)
     app.include_router(router)
     app.add_middleware(
         CORSMiddleware,

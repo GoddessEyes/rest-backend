@@ -3,11 +3,9 @@ from src.settings.base import BaseSettings
 
 
 DB_MODELS = [
-    'models.user',
+    "models.user",
 ]
-POSTGRES_DB_URL = (
-    "postgres://{postgres_user}:{postgres_password}@{postgres_host}:{postgres_port}/{postgres_db}"
-)
+POSTGRES_DB_URL = "postgres://{postgres_user}:{postgres_password}@{postgres_host}:{postgres_port}/{postgres_db}"
 
 
 class PostgresSettings(BaseSettings):

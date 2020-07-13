@@ -44,6 +44,7 @@ disable=
     no-name-in-module,
     redefined-builtin,
     logging-format-interpolation,
+    unused-variable,
 
 [REPORTS]
 
@@ -118,7 +119,7 @@ additional-builtins=
 
 [FORMAT]
 
-max-line-length=99
+max-line-length=120
 
 max-module-lines=1000
 

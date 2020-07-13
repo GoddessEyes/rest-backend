@@ -4,6 +4,8 @@ from tortoise.contrib.pydantic import pydantic_model_creator
 
 
 class User(AbstractUser):
+    """Модель Пользователя."""
+
     id = fields.IntField(pk=True)
     is_active = fields.BooleanField(default=True, description="Is Active")
     is_superuser = fields.BooleanField(default=False, description="Is SuperUser")
@@ -15,7 +17,7 @@ class User(AbstractUser):
         return f"{self.pk}#{self.username}"
 
     class Meta:
-        table = 'users'
+        table = "users"
 
 
 User_Pydantic = pydantic_model_creator(User, name="User")
