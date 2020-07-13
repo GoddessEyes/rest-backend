@@ -1,11 +1,10 @@
 from fastapi import FastAPI
-from fastapi_admin.site import Site
-from tortoise.contrib.fastapi import register_tortoise
-
-from src.settings import tortoise_config
 from fastapi_admin.factory import app as admin_app
-from starlette.middleware.cors import CORSMiddleware
+from fastapi_admin.site import Site
 from src.endpoints.users.routes import router
+from src.settings import tortoise_config
+from starlette.middleware.cors import CORSMiddleware
+from tortoise.contrib.fastapi import register_tortoise
 
 
 def init_admin(app: FastAPI):

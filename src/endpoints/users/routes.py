@@ -1,6 +1,6 @@
 from fastapi.routing import APIRouter
+from models.user import User, User_Pydantic, UserIn_Pydantic
 
-from models.user import User, UserIn_Pydantic, User_Pydantic
 
 router = APIRouter()
 

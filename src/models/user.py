@@ -1,7 +1,6 @@
-
+from fastapi_admin.models import User as AbstractUser
 from tortoise import fields
 from tortoise.contrib.pydantic import pydantic_model_creator
-from fastapi_admin.models import User as AbstractUser
 
 
 class User(AbstractUser):

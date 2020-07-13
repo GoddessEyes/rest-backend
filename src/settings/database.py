@@ -1,6 +1,6 @@
-
 from pydantic import Field
 from src.settings.base import BaseSettings
+
 
 DB_MODELS = [
     'models.user',
@@ -34,8 +34,4 @@ class TortoiseSettings(BaseSettings):
         postgres = PostgresSettings()
         db_url = POSTGRES_DB_URL.format(**postgres.dict())
         modules = {"models": DB_MODELS}
-        return TortoiseSettings(
-            db_url=db_url,
-            modules=modules,
-            generate_schemas=True,
-        )
+        return TortoiseSettings(db_url=db_url, modules=modules, generate_schemas=True,)
