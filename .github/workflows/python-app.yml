@@ -39,5 +39,5 @@ jobs:
       run: |
         pipenv run isort --check
 
-    - name: black
-      run: pipenv run black --config .pyproject.toml --skip-string-normalization --check src
+    - name: Black Check
+      uses: jpetrucciani/black-check@19.10b0
