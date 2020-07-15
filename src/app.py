@@ -13,7 +13,7 @@ def init_admin(app: FastAPI):
             tortoise_app="admin",
             admin_secret="Shelter",
             permission=True,
-            user_model="models.AdminUser",
+            user_model="AdminUser",
             site=Site(
                 name="Shelter",
                 login_footer="Shelter Admin",
