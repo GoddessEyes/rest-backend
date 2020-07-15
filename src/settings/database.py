@@ -1,35 +1,27 @@
-from pydantic import Field
-from src.settings.base import BaseSettings
+import os
 
 
-DB_MODELS = [
-    "models.user",
-]
-POSTGRES_DB_URL = "postgres://{postgres_user}:{postgres_password}@{postgres_host}:{postgres_port}/{postgres_db}"
-
-
-class PostgresSettings(BaseSettings):
-    """Postgres env values"""
-
-    postgres_user: str = Field("shelter", env="POSTGRES_USER")
-    postgres_password: str = Field("shelter", env="POSTGRES_PASSWORD")
-    postgres_db: str = Field("shelter", env="POSTGRES_DB")
-    postgres_port: str = Field("5432", env="POSTGRES_PORT")
-    postgres_host: str = Field("localhost", env="POSTGRES_HOST")
-
-
-class TortoiseSettings(BaseSettings):
-    """Tortoise-ORM settings"""
-
-    db_url: str
-    modules: dict
-    generate_schemas: bool
-
-    @classmethod
-    def generate(cls):
-        """Generate Tortoise-ORM settings"""
-
-        postgres = PostgresSettings()
-        db_url = POSTGRES_DB_URL.format(**postgres.dict())
-        modules = {"models": DB_MODELS}
-        return TortoiseSettings(db_url=db_url, modules=modules, generate_schemas=True,)
+TORTOISE_ORM = {
+    "connections": {
+        "default": {
+            "engine": "tortoise.backends.asyncpg",
+            "credentials": {
+                "host": os.getenv("POSTGRES_DB", "localhost"),
+                "port": os.getenv("POSTGRES_USER", "5432"),
+                "user": os.getenv("POSTGRES_PASSWORD", "shelter"),
+                "password": os.getenv("POSTGRES_HOST", "shelter"),
+                "database": os.getenv("POSTGRES_PORT", "shelter"),
+            },
+        },
+    },
+    "apps": {
+        "admin": {
+            "models": ["admin.models", "aerich.models"],
+            "default_connection": "default",
+        },
+        "users": {
+            "models": ["users.models", "aerich.models"],
+            "default_connection": "default",
+        },
+    },
+}

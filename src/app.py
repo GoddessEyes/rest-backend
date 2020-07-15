@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 from fastapi_admin.factory import app as admin_app
 from fastapi_admin.site import Site
-from src.endpoints.users.routes import router
-from src.settings import tortoise_config
+from src.settings.database import TORTOISE_ORM
 from starlette.middleware.cors import CORSMiddleware
 from tortoise.contrib.fastapi import register_tortoise
 
@@ -11,8 +10,10 @@ def init_admin(app: FastAPI):
     @app.on_event("startup")
     async def startup():
         admin_app.init(
+            tortoise_app="admin",
             admin_secret="Shelter",
             permission=True,
+            user_model="models.AdminUser",
             site=Site(
                 name="Shelter",
                 login_footer="Shelter Admin",
@@ -31,11 +32,7 @@ def init_db(app: FastAPI):
     :return:
     """
     register_tortoise(
-        app=app,
-        modules=tortoise_config.modules,
-        db_url=tortoise_config.db_url,
-        generate_schemas=tortoise_config.generate_schemas,
-        add_exception_handlers=True,
+        app=app, config=TORTOISE_ORM,
     )
 
 
@@ -44,7 +41,6 @@ def __init_app__():
     init_db(app)
     init_admin(app=app)
     app.mount("/admin", admin_app)
-    app.include_router(router)
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
