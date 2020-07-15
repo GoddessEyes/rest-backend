@@ -6,11 +6,11 @@ TORTOISE_ORM = {
         "default": {
             "engine": "tortoise.backends.asyncpg",
             "credentials": {
-                "host": os.getenv("POSTGRES_DB", "localhost"),
-                "port": os.getenv("POSTGRES_USER", "5432"),
-                "user": os.getenv("POSTGRES_PASSWORD", "shelter"),
-                "password": os.getenv("POSTGRES_HOST", "shelter"),
-                "database": os.getenv("POSTGRES_PORT", "shelter"),
+                "host": os.getenv("POSTGRES_HOST", "localhost"),
+                "port": os.getenv("POSTGRES_PORT", "5432"),
+                "user": os.getenv("POSTGRES_USER", "shelter"),
+                "password": os.getenv("POSTGRES_PASSWORD", "shelter"),
+                "database": os.getenv("POSTGRES_DB", "shelter"),
             },
         },
     },
