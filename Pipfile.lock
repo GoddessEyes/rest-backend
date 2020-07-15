@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "852f98916a5d84dc3555d8b2946a3f65c8327e887029fdab261c30e2c63e3bcd"
+            "sha256": "8f2014da0bd4e1c356c0769004fbfb0d6f6642d51b3a21227626ff967b0d65b8"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,14 @@
         ]
     },
     "default": {
+        "aerich": {
+            "hashes": [
+                "sha256:15277aa2e33ffe8b4b4789bd8210dd273873638e1ada0e9a5a51ce65b1168d94",
+                "sha256:822dca403fdc0e9d7a5b3a8f336e38dfcde24b3e3e7d776a1dce0fbe8a26a47e"
+            ],
+            "index": "pypi",
+            "version": "==0.2.1"
+        },
         "aiomysql": {
             "hashes": [
                 "sha256:5fd798481f16625b424eec765c56d712ac78a51f3bd0175a3de94107aae43307",
@@ -25,10 +33,30 @@
         },
         "aiosqlite": {
             "hashes": [
-                "sha256:3785ba86cfc05adde959f675cf6ee120aeb318849727c83bbf411662282d85c9",
-                "sha256:413700b43105fdb23f6addb227f4dd0da2c407be7705a23a224b65806143bc6f"
+                "sha256:19b984b6702aed9f1c85c023f37296954547fc4030dae8e9d027b2a930bed78b",
+                "sha256:a2884793f4dc8f2798d90e1dfecb2b56a6d479cf039f7ec52356a7fd5f3bdc57"
             ],
-            "version": "==0.14.1"
+            "version": "==0.15.0"
+        },
+        "anyio": {
+            "hashes": [
+                "sha256:95f60964fc4583f3f226f8dc275dfb02aefe7b39b85a999c6d14f4ec5323c1d8",
+                "sha256:9ee67e8131853f42957e214d4531cee6f2b66dda164a298d9686a768b7161a4f"
+            ],
+            "version": "==1.4.0"
+        },
+        "async-generator": {
+            "hashes": [
+                "sha256:01c7bf666359b4967d2cda0000cc2e4af16a0ae098cbffcb8472fb9e8ad6585b",
+                "sha256:6ebb3d106c12920aaae42ccb6f787ef5eefdcdd166ea3d628fa8476abe712144"
+            ],
+            "version": "==1.10"
+        },
+        "asyncclick": {
+            "hashes": [
+                "sha256:62cebf3eca36d973802e2dd521ca1db11c5bf4544e9795e093d1a53cb688a8c2"
+            ],
+            "version": "==7.0.9"
         },
         "asyncpg": {
             "hashes": [
@@ -191,6 +219,13 @@
             ],
             "markers": "sys_platform != 'win32' and sys_platform != 'cygwin' and platform_python_implementation != 'PyPy'",
             "version": "==0.1.1"
+        },
+        "idna": {
+            "hashes": [
+                "sha256:b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6",
+                "sha256:b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0"
+            ],
+            "version": "==2.10"
         },
         "iso8601": {
             "hashes": [
@@ -356,6 +391,13 @@
             ],
             "version": "==1.15.0"
         },
+        "sniffio": {
+            "hashes": [
+                "sha256:20ed6d5b46f8ae136d00b9dcb807615d83ed82ceea6b2058cecb696765246da5",
+                "sha256:8e3810100f69fe0edd463d02ad407112542a11ffdc29f67db2bf3771afb87a21"
+            ],
+            "version": "==1.1.0"
+        },
         "starlette": {
             "hashes": [
                 "sha256:04fe51d86fd9a594d9b71356ed322ccde5c9b448fc716ac74155e5821a922f8d",
@@ -453,7 +495,7 @@
         },
         "black": {
             "git": "https://github.com/psf/black.git",
-            "ref": "cc2facaac69a8ffa4486e6fe498842debb17ce12"
+            "ref": "8d036ceb3f0a0e0b52276e8d4afe840d1fcad11b"
         },
         "flake8": {
             "hashes": [

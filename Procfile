@@ -1,1 +1,1 @@
-web aerich upgrade  && uvicorn src.main:app
+web: aerich upgrade  && uvicorn src.main:app --port $PORT
