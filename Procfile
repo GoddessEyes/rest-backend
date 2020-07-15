@@ -1,1 +1,1 @@
-web: PYTHONPATH=./src aerich upgrade  && PYTHONPATH=./src uvicorn src.main:app --port $PORT
+web: PYTHONPATH=./src aerich upgrade  && PYTHONPATH=./src uvicorn src.main:app --host "0.0.0.0" --port $PORT
